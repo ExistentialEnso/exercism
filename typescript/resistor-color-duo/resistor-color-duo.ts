@@ -11,7 +11,13 @@ const mapping: any = {
   white: 9
 }
 
-export function decodedValue(colors: string[]) {
+/**
+ * Converts transistor colors to a number
+ * 
+ * @param colors Array of different color names
+ * @returns The number represented by the colors
+ */
+export function decodedValue(colors: string[]): number {
   if(colors.length < 2)
     return 0
 
