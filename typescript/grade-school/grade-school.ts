@@ -1,12 +1,12 @@
 export class GradeSchool {
   private grades: any = {}
 
-  roster() {
+  roster(): string[] {
     // Prevent modification of data from outside the class
     return JSON.parse(JSON.stringify(this.grades))
   }
 
-  add(name: string, grade: number) {
+  add(name: string, grade: number): void {
     if(!name || !grade)
       return
 
@@ -25,7 +25,7 @@ export class GradeSchool {
     this.grades[grade].sort()
   }
 
-  grade(grade: number) {
+  grade(grade: number): any {
     // .splice() makes a new array object to prevent data modification
     return (this.grades[grade] || []).slice()
   }
